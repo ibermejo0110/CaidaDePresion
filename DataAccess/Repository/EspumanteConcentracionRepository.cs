@@ -13,22 +13,18 @@ namespace DataAccess.Repository
         {
             throw new NotImplementedException();
         }
-
         public override void Delete()
         {
             throw new NotImplementedException();
         }
-
         public override DataTable GetDataTable()
         {
             throw new NotImplementedException();
         }
-
         public override DataTable GetDataTable(int id)
         {
             throw new NotImplementedException();
         }
-
         public override void Save(Dictionary<string, object> colection, ref int id)
         {
             try
@@ -48,7 +44,6 @@ namespace DataAccess.Repository
                 Cerrar();
             }
         }
-
         public override void Update(Dictionary<string, object> colection, int id)
         {
             throw new NotImplementedException();

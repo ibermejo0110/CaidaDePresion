@@ -336,13 +336,12 @@ namespace CaidaPresion
             label15.BackColor = Color.Transparent;
             label15.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label15.ForeColor = Color.White;
-            label15.Location = new Point(68, 51);
+            label15.Location = new Point(104, 51);
             label15.Margin = new Padding(2, 0, 2, 0);
             label15.Name = "label15";
-            label15.Size = new Size(162, 16);
+            label15.Size = new Size(126, 16);
             label15.TabIndex = 54;
-            label15.Text = "Caida de presión (Psi)\r\n";
-            label15.Click += label15_Click;
+            label15.Text = "Caida de presión";
             // 
             // label7
             // 
@@ -417,7 +416,7 @@ namespace CaidaPresion
             btnNuevoEspumante.Location = new Point(324, 29);
             btnNuevoEspumante.Margin = new Padding(2);
             btnNuevoEspumante.Name = "btnNuevoEspumante";
-            btnNuevoEspumante.Size = new Size(28, 23);
+            btnNuevoEspumante.Size = new Size(28, 20);
             btnNuevoEspumante.TabIndex = 41;
             btnNuevoEspumante.UseVisualStyleBackColor = true;
             btnNuevoEspumante.Click += btnNuevoEspumante_Click;
@@ -553,7 +552,7 @@ namespace CaidaPresion
             panel11.Dock = DockStyle.Top;
             panel11.Location = new Point(0, 0);
             panel11.Name = "panel11";
-            panel11.Size = new Size(1386, 77);
+            panel11.Size = new Size(1360, 77);
             panel11.TabIndex = 54;
             // 
             // panel6
@@ -565,7 +564,7 @@ namespace CaidaPresion
             panel6.Dock = DockStyle.Fill;
             panel6.Location = new Point(1096, 0);
             panel6.Name = "panel6";
-            panel6.Size = new Size(290, 77);
+            panel6.Size = new Size(264, 77);
             panel6.TabIndex = 47;
             // 
             // btnAyuda
@@ -700,7 +699,7 @@ namespace CaidaPresion
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 77);
             panel1.Name = "panel1";
-            panel1.Size = new Size(242, 686);
+            panel1.Size = new Size(242, 396);
             panel1.TabIndex = 55;
             // 
             // panel7
@@ -709,17 +708,17 @@ namespace CaidaPresion
             panel7.Dock = DockStyle.Fill;
             panel7.Location = new Point(0, 422);
             panel7.Name = "panel7";
-            panel7.Size = new Size(242, 264);
+            panel7.Size = new Size(242, 0);
             panel7.TabIndex = 48;
             // 
             // panel13
             // 
             panel13.BackgroundImage = (Image)resources.GetObject("panel13.BackgroundImage");
             panel13.BackgroundImageLayout = ImageLayout.Stretch;
-            panel13.Location = new Point(38, 23);
+            panel13.Location = new Point(51, 23);
             panel13.Margin = new Padding(2);
             panel13.Name = "panel13";
-            panel13.Size = new Size(162, 147);
+            panel13.Size = new Size(162, 137);
             panel13.TabIndex = 41;
             // 
             // panel14
@@ -740,10 +739,10 @@ namespace CaidaPresion
             customPanel6.GradientAngle = 90F;
             customPanel6.GradientBottomColor = Color.CadetBlue;
             customPanel6.GradientTopColor = Color.DodgerBlue;
-            customPanel6.Location = new Point(11, 9);
+            customPanel6.Location = new Point(18, 34);
             customPanel6.Margin = new Padding(2);
             customPanel6.Name = "customPanel6";
-            customPanel6.Size = new Size(219, 413);
+            customPanel6.Size = new Size(204, 311);
             customPanel6.TabIndex = 41;
             // 
             // pictureBox1
@@ -753,7 +752,7 @@ namespace CaidaPresion
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(219, 413);
+            pictureBox1.Size = new Size(204, 311);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 45;
             pictureBox1.TabStop = false;
@@ -765,7 +764,7 @@ namespace CaidaPresion
             panel15.Dock = DockStyle.Fill;
             panel15.Location = new Point(242, 77);
             panel15.Name = "panel15";
-            panel15.Size = new Size(1144, 686);
+            panel15.Size = new Size(1118, 396);
             panel15.TabIndex = 56;
             // 
             // panel17
@@ -776,7 +775,7 @@ namespace CaidaPresion
             panel17.Dock = DockStyle.Fill;
             panel17.Location = new Point(854, 0);
             panel17.Name = "panel17";
-            panel17.Size = new Size(290, 686);
+            panel17.Size = new Size(264, 396);
             panel17.TabIndex = 53;
             // 
             // customPanel3
@@ -936,7 +935,7 @@ namespace CaidaPresion
             panel16.Dock = DockStyle.Left;
             panel16.Location = new Point(0, 0);
             panel16.Name = "panel16";
-            panel16.Size = new Size(854, 686);
+            panel16.Size = new Size(854, 396);
             panel16.TabIndex = 52;
             // 
             // customPanel5
@@ -981,7 +980,7 @@ namespace CaidaPresion
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.Black;
-            ClientSize = new Size(1386, 763);
+            ClientSize = new Size(1360, 473);
             Controls.Add(panel15);
             Controls.Add(panel1);
             Controls.Add(panel11);

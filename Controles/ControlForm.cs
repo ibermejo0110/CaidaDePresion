@@ -38,7 +38,8 @@ namespace Controles
         {
             SerialPort serialPort=(SerialPort)sender;
             Thread.Sleep(500);
-            Dato = serialPort.ReadExisting()+";";
+            Dato = serialPort.ReadExisting();
+            serialPort.Close();
             Form.Invoke(new EventHandler(DisplayText));
         }
         private static void DisplayText(object sender, EventArgs e)

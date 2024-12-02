@@ -1,2 +1,2 @@
-# CaidaDePresion
- La siguiente interfaz está diseñada como una aplicación de escritorio para conocer la caída de presión que se registra en la columna de flotación ubicada en el laboratorio de carboquímica en la universidad del Atlántico. La herramienta nos permite visualizar parámetros como el Airholdup, diámetro de la burbuja, Numero de Reynolds, etc, los cuales son importantes para realizar un correcto análisis hidrodinámico.
+# CaidaPresion
+ proyecto cientifico

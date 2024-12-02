@@ -1,21 +1,11 @@
 ﻿using Controles;
 using DataAccess.Repository;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
 namespace CaidaPresion
 {
     public partial class frmOtrosResultados : Form
     {
         DataSet ds;
-
         public EspumanteRepository? EspumanteRepository { get; set; }
         public ConcentracionRepository? ConcentracionRepository { get; set; }
         public OtrosResultadosRepository? OtrosResultadosRepository { get; set; }
@@ -31,11 +21,9 @@ namespace CaidaPresion
         private void frmDatosEntrada_Load(object sender, EventArgs e)
         {
             ds = new DataSet();
-
             string[] arr = { "id", "nombre" };
             ControlForm.FillCombo(EspumanteRepository.GetDataTable(), arr, cmbEspumante);
             excel = new Excel();
-
         }
 
         private void dgResultados_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -48,7 +36,6 @@ namespace CaidaPresion
                 dgOtrosResultados.DataSource = tableOtrosResultados;
             }
         }
-
         private void cmbEspumante_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -57,14 +44,12 @@ namespace CaidaPresion
                 int.TryParse(cmbEspumante.SelectedValue != null ? cmbEspumante.SelectedValue.ToString() : "", out int espumante);
                 DataTable tblConcentracion = ConcentracionRepository.GetDataTable(espumante);
                 ControlForm.FillCombo(tblConcentracion, arr, cmbConcentracion);
-
             }
             catch (Exception ex)
             {
                 ControlForm.GetMessage(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void cmbConcentracion_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -74,18 +59,15 @@ namespace CaidaPresion
                 ds.Tables.Clear();
                 tableResultados = ResultadoRepository.GetDataTableEspumateConcentracion(espumante, concentracion);
                 tableResultados.TableName = "Resultados";
-
                 dgResultados.DataSource = tableResultados;
                 tableOtrosResultados = OtrosResultadosRepository.GetDataTable(0);
                 dgOtrosResultados.DataSource = tableOtrosResultados;
             }
             catch (Exception ex)
             {
-
                 ControlForm.GetMessage(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnExportar_Click(object sender, EventArgs e)
         {
             try

@@ -78,7 +78,6 @@ namespace CaidaPresion
             }
             catch (Exception ex)
             {
-
                 ControlForm.GetMessage(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -87,13 +86,18 @@ namespace CaidaPresion
         {
             try
             {
+                this.Cursor = Cursors.WaitCursor;
                 if (tableResultados == null || tableOtrosResultados == null)
+
                 {
                     ControlForm.GetMessage("Las tablas deben contener valores", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                     return;
                 }
                 if (tableResultados.DataSet == null || tableOtrosResultados.DataSet == null)
                 {
+
+
                     ds.Tables.Add(tableResultados);
                     ds.Tables.Add(tableOtrosResultados);
                 }
@@ -101,8 +105,8 @@ namespace CaidaPresion
                 {
                     ds = tableResultados.DataSet;
                 }
-                this.Cursor = Cursors.WaitCursor;
                 excel.ExportarDatos(ds);
+
             }
             catch (Exception ex)
             {

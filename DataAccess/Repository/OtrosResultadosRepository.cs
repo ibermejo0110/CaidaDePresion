@@ -14,17 +14,14 @@ namespace DataAccess.Repository
         {
             throw new NotImplementedException();
         }
-
         public override void Delete(int id)
         {
             throw new NotImplementedException();
         }
-
         public override DataTable GetDataTable()
         {
             throw new NotImplementedException();
         }
-
         public override DataTable GetDataTable(int id)
         {
             try
@@ -33,7 +30,6 @@ namespace DataAccess.Repository
                 Command = GetCommand("select id, PrimerTermino,ReynoldEnjambre,SegundoTermino,TercerTermino,FuncionObjetivo,DiametroBurbuja,resultado_id  from otros_resultados where resultado_id=" + id, CommandType.Text);
                 DataTable dataTable = GetTableCommand(Command);
                 return dataTable;
-
             }
             catch (Exception ex)
             {
@@ -44,7 +40,6 @@ namespace DataAccess.Repository
                 Cerrar();
             }
         }
-
         public override void Save(Dictionary<string, object> colection ,ref int id)
         {
             try
@@ -74,9 +69,7 @@ namespace DataAccess.Repository
             {
                 Cerrar();
             }
-
         }
-
         public override void Update(Dictionary<string, object> colection, int id)
         {
             throw new NotImplementedException();

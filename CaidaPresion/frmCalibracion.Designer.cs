@@ -28,28 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCalibracion));
             cmbSerialPort = new ComboBox();
             label1 = new Label();
-            panel4 = new Panel();
-            txtDeltaP = new TextBox();
-            panel1 = new Panel();
             btnCerrar = new Button();
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
-            tabPage3 = new TabPage();
-            button1 = new Button();
-            panel1.SuspendLayout();
-            tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
-            tabPage3.SuspendLayout();
+            customPanel1 = new Controles.CustomPanel();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            cmbParity = new ComboBox();
+            cmbStopBits = new ComboBox();
+            numBaudRate = new NumericUpDown();
+            numDataBit = new NumericUpDown();
+            customPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numBaudRate).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numDataBit).BeginInit();
             SuspendLayout();
             // 
             // cmbSerialPort
             // 
             cmbSerialPort.FormattingEnabled = true;
-            cmbSerialPort.Location = new Point(137, 15);
+            cmbSerialPort.Location = new Point(153, 35);
             cmbSerialPort.Name = "cmbSerialPort";
             cmbSerialPort.Size = new Size(141, 23);
             cmbSerialPort.TabIndex = 0;
@@ -58,46 +57,14 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(6, 18);
+            label1.Location = new Point(22, 38);
             label1.Name = "label1";
             label1.Size = new Size(123, 16);
             label1.TabIndex = 1;
             label1.Text = "Puertos Seriales";
-            // 
-            // panel4
-            // 
-            panel4.BackgroundImage = (Image)resources.GetObject("panel4.BackgroundImage");
-            panel4.BackgroundImageLayout = ImageLayout.Stretch;
-            panel4.Location = new Point(94, 45);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(38, 21);
-            panel4.TabIndex = 47;
-            // 
-            // txtDeltaP
-            // 
-            txtDeltaP.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDeltaP.Location = new Point(137, 45);
-            txtDeltaP.Margin = new Padding(2);
-            txtDeltaP.Multiline = true;
-            txtDeltaP.Name = "txtDeltaP";
-            txtDeltaP.ReadOnly = true;
-            txtDeltaP.ScrollBars = ScrollBars.Vertical;
-            txtDeltaP.Size = new Size(141, 87);
-            txtDeltaP.TabIndex = 46;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(2, 11, 10);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(cmbSerialPort);
-            panel1.Controls.Add(txtDeltaP);
-            panel1.Controls.Add(panel4);
-            panel1.Location = new Point(8, 16);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(296, 143);
-            panel1.TabIndex = 56;
             // 
             // btnCerrar
             // 
@@ -105,85 +72,133 @@
             btnCerrar.BackgroundImageLayout = ImageLayout.Stretch;
             btnCerrar.FlatStyle = FlatStyle.Flat;
             btnCerrar.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCerrar.Location = new Point(249, 230);
+            btnCerrar.Location = new Point(190, 174);
             btnCerrar.Margin = new Padding(2);
             btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(65, 30);
+            btnCerrar.Size = new Size(104, 30);
             btnCerrar.TabIndex = 61;
-            btnCerrar.Text = "Cerrar";
+            btnCerrar.Text = "Abrir puerto";
             btnCerrar.UseVisualStyleBackColor = false;
             btnCerrar.Click += btnCerrar_Click;
             // 
-            // tabControl1
+            // customPanel1
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage3);
-            tabControl1.Location = new Point(1, 2);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(317, 223);
-            tabControl1.TabIndex = 62;
-            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
+            customPanel1.BackColor = Color.White;
+            customPanel1.BorderRadius = 30;
+            customPanel1.Controls.Add(label5);
+            customPanel1.Controls.Add(label4);
+            customPanel1.Controls.Add(label3);
+            customPanel1.Controls.Add(label2);
+            customPanel1.Controls.Add(cmbParity);
+            customPanel1.Controls.Add(cmbStopBits);
+            customPanel1.Controls.Add(numBaudRate);
+            customPanel1.Controls.Add(numDataBit);
+            customPanel1.Controls.Add(label1);
+            customPanel1.Controls.Add(btnCerrar);
+            customPanel1.Controls.Add(cmbSerialPort);
+            customPanel1.ForeColor = Color.Black;
+            customPanel1.GradientAngle = 90F;
+            customPanel1.GradientBottomColor = Color.FromArgb(42, 46, 50);
+            customPanel1.GradientTopColor = Color.FromArgb(42, 46, 50);
+            customPanel1.Location = new Point(12, 12);
+            customPanel1.Name = "customPanel1";
+            customPanel1.Size = new Size(312, 221);
+            customPanel1.TabIndex = 63;
+            customPanel1.Paint += customPanel1_Paint;
             // 
-            // tabPage1
+            // label5
             // 
-            tabPage1.BackColor = Color.Black;
-            tabPage1.Controls.Add(panel1);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(309, 195);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "COM";
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(78, 153);
+            label5.Name = "label5";
+            label5.Size = new Size(66, 16);
+            label5.TabIndex = 69;
+            label5.Text = "StopBits";
             // 
-            // tabPage2
+            // label4
             // 
-            tabPage2.BackColor = Color.Black;
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(309, 195);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "USB";
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(68, 97);
+            label4.Name = "label4";
+            label4.Size = new Size(75, 16);
+            label4.TabIndex = 68;
+            label4.Text = "BaudRate";
             // 
-            // tabPage3
+            // label3
             // 
-            tabPage3.BackColor = Color.Black;
-            tabPage3.Controls.Add(button1);
-            tabPage3.Location = new Point(4, 24);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(309, 195);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "CX PROGRAMMER";
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(97, 65);
+            label3.Name = "label3";
+            label3.Size = new Size(46, 16);
+            label3.TabIndex = 67;
+            label3.Text = "Parity";
             // 
-            // button1
+            // label2
             // 
-            button1.Location = new Point(150, 79);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(75, 125);
+            label2.Name = "label2";
+            label2.Size = new Size(65, 16);
+            label2.TabIndex = 66;
+            label2.Text = "DataBits";
+            // 
+            // cmbParity
+            // 
+            cmbParity.FormattingEnabled = true;
+            cmbParity.Location = new Point(153, 62);
+            cmbParity.Name = "cmbParity";
+            cmbParity.Size = new Size(141, 23);
+            cmbParity.TabIndex = 62;
+            // 
+            // cmbStopBits
+            // 
+            cmbStopBits.FormattingEnabled = true;
+            cmbStopBits.Location = new Point(152, 146);
+            cmbStopBits.Name = "cmbStopBits";
+            cmbStopBits.Size = new Size(142, 23);
+            cmbStopBits.TabIndex = 65;
+            // 
+            // numBaudRate
+            // 
+            numBaudRate.Location = new Point(153, 90);
+            numBaudRate.Name = "numBaudRate";
+            numBaudRate.Size = new Size(141, 23);
+            numBaudRate.TabIndex = 63;
+            // 
+            // numDataBit
+            // 
+            numDataBit.Location = new Point(154, 118);
+            numDataBit.Name = "numDataBit";
+            numDataBit.Size = new Size(140, 23);
+            numDataBit.TabIndex = 64;
             // 
             // frmCalibracion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(317, 268);
-            ControlBox = false;
-            Controls.Add(tabControl1);
-            Controls.Add(btnCerrar);
+            ClientSize = new Size(338, 245);
+            Controls.Add(customPanel1);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "frmCalibracion";
-            Text = "Form1";
+            Text = "Calibración";
             Load += Form1_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage3.ResumeLayout(false);
+            customPanel1.ResumeLayout(false);
+            customPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numBaudRate).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numDataBit).EndInit();
             ResumeLayout(false);
         }
 
@@ -191,14 +206,15 @@
 
         private ComboBox cmbSerialPort;
         private Label label1;
-        private Panel panel4;
-        private TextBox txtDeltaP;
-        private Panel panel1;
         private Button btnCerrar;
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private TabPage tabPage3;
-        private Button button1;
+        private Controles.CustomPanel customPanel1;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private ComboBox cmbParity;
+        private ComboBox cmbStopBits;
+        private NumericUpDown numBaudRate;
+        private NumericUpDown numDataBit;
     }
 }

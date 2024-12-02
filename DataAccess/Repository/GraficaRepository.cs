@@ -14,15 +14,14 @@ namespace DataAccess.Repository
         {
             throw new NotImplementedException();
         }
-
         public override void Delete(int id)
         {
             throw new NotImplementedException();
         }
-
         public override DataTable GetDataTable()
         {
-            try {
+            try
+            {
                 Abrir();
                 Command = GetCommand("select id,nombre from grafica", CommandType.Text);
                 return GetTableCommand(Command);
@@ -35,21 +34,15 @@ namespace DataAccess.Repository
             {
                 Cerrar();                    
             }
-
-
-
         }
-
         public override DataTable GetDataTable(int id)
         {
             throw new NotImplementedException();
         }
-
         public override void Save(Dictionary<string, object> colection, ref int id)
         {
             throw new NotImplementedException();
         }
-
         public override void Update(Dictionary<string, object> colection, int id)
         {
             throw new NotImplementedException();

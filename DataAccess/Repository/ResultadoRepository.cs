@@ -10,8 +10,7 @@ namespace DataAccess.Repository
             {
                 Abrir();
                 Command = GetCommand("delete from resultados", CommandType.Text);
-                Command.ExecuteNonQuery();
-                
+                Command.ExecuteNonQuery();                
             }
             catch (Exception ex)
             {
@@ -42,6 +41,7 @@ namespace DataAccess.Repository
                 Cerrar();
             }
         }
+
         public  DataTable GetDataTableEspumateConcentracion(int espumante,int concentracion)
         {
             try
@@ -57,7 +57,6 @@ namespace DataAccess.Repository
             catch(Exception ex)
             {
                 throw ex;
-
             }
             finally
             {
@@ -174,7 +173,7 @@ namespace DataAccess.Repository
             {
                 Cerrar();
             }
-        }        
+        }
         public override DataTable GetDataTable(int id)
         {
             throw new NotImplementedException();

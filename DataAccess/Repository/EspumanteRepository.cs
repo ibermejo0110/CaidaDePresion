@@ -8,7 +8,6 @@ namespace DataAccess.Repository
         {
             throw new NotImplementedException();
         }
-
         public override void Delete(int id)
         {
             try
@@ -26,7 +25,6 @@ namespace DataAccess.Repository
                 Cerrar();
             }
         }
-
         public override DataTable GetDataTable()
         {
             try
@@ -35,7 +33,6 @@ namespace DataAccess.Repository
                 Command = GetCommand("select id ,nombre,descripcion from espumante", CommandType.Text);
                 DataTable table = GetTableCommand(Command);
                 return table;
-
             }
             catch (Exception ex)
             {
@@ -63,7 +60,6 @@ namespace DataAccess.Repository
                 Command.Parameters.Add("_id_espumante", MySqlDbType.Int32).Direction = ParameterDirection.Output;
                 Command.ExecuteNonQuery();
                 int.TryParse(Command.Parameters["_id_espumante"].Value.ToString(), out id);
-
             }
             catch (Exception ex)
             {
@@ -94,7 +90,6 @@ namespace DataAccess.Repository
             {
                 Cerrar();
             }
-
         }
     }
 }
