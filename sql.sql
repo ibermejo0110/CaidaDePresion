@@ -214,7 +214,6 @@ DELIMITER $$
 BEGIN
 		insert into `espumante` (`nombre`,`descripcion`)values(_nombre,_descripcion);
 		SELECT MAX(id) INTO _id_espumante FROM espumante;
-
 	END */$$
 DELIMITER ;
 
@@ -300,16 +299,16 @@ DROP TABLE IF EXISTS `view_resultados`;
 
 /*!50001 CREATE TABLE  `view_resultados`(
  `id` int(11) ,
- `Jg` decimal(10,2) ,
- `DeltaP` decimal(10,2) ,
- `Jsl` decimal(10,2) ,
- `Holdup` decimal(10,2) ,
- `Db` decimal(10,2) ,
- `Ub` decimal(10,2) ,
- `Reb` decimal(10,2) ,
- `Usg` decimal(10,2) ,
+ `Jg(cm/s)` decimal(10,2) ,
+ `DeltaP(Psi)` decimal(10,2) ,
+ `Jsl(cm/s)` decimal(10,2) ,
+ `%Holdup` decimal(10,2) ,
+ `Db(mm)` decimal(10,2) ,
+ `Ub(cm/s)` decimal(10,2) ,
+ `Usg(m/s)` decimal(10,2) ,
+ `Reynold de burbuja` decimal(10,2) ,
  `concentracion_id` int(11) ,
- `concentracion` varchar(10) ,
+ `Concentración(ppm)` int(11) ,
  `espumante_id` int(11) ,
  `espumante` varchar(10) 
 )*/;
@@ -326,7 +325,7 @@ DROP TABLE IF EXISTS `view_resultados`;
 /*!50001 DROP TABLE IF EXISTS `view_resultados` */;
 /*!50001 DROP VIEW IF EXISTS `view_resultados` */;
 
-/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_resultados` AS select `resultados`.`id` AS `id`,`resultados`.`jg` AS `Jg`,`resultados`.`deltap` AS `DeltaP`,`resultados`.`jsl` AS `Jsl`,`resultados`.`holdup` AS `Holdup`,`resultados`.`db` AS `Db`,`resultados`.`ub` AS `Ub`,`resultados`.`reb` AS `Reb`,`resultados`.`usg` AS `Usg`,`concentracion`.`id` AS `concentracion_id`,`concentracion`.`nombre` AS `concentracion`,`espumante`.`id` AS `espumante_id`,`espumante`.`nombre` AS `espumante` from ((`resultados` join `espumante` on(`espumante`.`id` = `resultados`.`espumante_id`)) join `concentracion` on(`concentracion`.`id` = `resultados`.`concentracion_id`)) */;
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_resultados` AS select `resultados`.`id` AS `id`,`resultados`.`jg` AS `Jg(cm/s)`,`resultados`.`deltap` AS `DeltaP(Psi)`,`resultados`.`jsl` AS `Jsl(cm/s)`,`resultados`.`holdup` AS `%Holdup`,`resultados`.`db` AS `Db(mm)`,`resultados`.`ub` AS `Ub(cm/s)`,`resultados`.`usg` AS `Usg(m/s)`,`resultados`.`reb` AS `Reynold de burbuja`,`concentracion`.`id` AS `concentracion_id`,`concentracion`.`alias` AS `Concentración(ppm)`,`espumante`.`id` AS `espumante_id`,`espumante`.`nombre` AS `espumante` from ((`resultados` join `espumante` on(`espumante`.`id` = `resultados`.`espumante_id`)) join `concentracion` on(`concentracion`.`id` = `resultados`.`concentracion_id`)) */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

@@ -12,7 +12,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();
                 Command = GetCommand("delete from espumante where id=" + id, CommandType.Text);
                 Command.ExecuteNonQuery();
             }
@@ -29,7 +28,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();
                 Command = GetCommand("select id ,nombre,descripcion from espumante", CommandType.Text);
                 DataTable table = GetTableCommand(Command);
                 return table;
@@ -53,7 +51,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();
                 Command = GetCommand("Insertar_espumante", CommandType.StoredProcedure);
                 Command.Parameters.Add("_nombre", MySql.Data.MySqlClient.MySqlDbType.VarChar).Value = colection["nombre"].ToString();
                 Command.Parameters.Add("_descripcion", MySql.Data.MySqlClient.MySqlDbType.LongText).Value = colection["descripcion"].ToString();
@@ -75,7 +72,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();
                 Command = GetCommand("Actualizar_espumante", CommandType.StoredProcedure);
                 Command.Parameters.Add("_nombre", MySql.Data.MySqlClient.MySqlDbType.VarChar).Value = colection["nombre"].ToString();
                 Command.Parameters.Add("_descripcion", MySql.Data.MySqlClient.MySqlDbType.LongText).Value = colection["descripcion"].ToString();

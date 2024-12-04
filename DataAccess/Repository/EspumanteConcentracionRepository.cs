@@ -29,7 +29,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();
                 Command = GetCommand("insertar_espumante_concentracion", CommandType.StoredProcedure);
                 Command.Parameters.Add("_espumante_id", MySql.Data.MySqlClient.MySqlDbType.Int32).Value = int.Parse(colection["espumante_id"].ToString());
                 Command.Parameters.Add("_concentracion_id", MySql.Data.MySqlClient.MySqlDbType.Int32).Value = int.Parse(colection["concentracion_id"].ToString());

@@ -22,7 +22,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();
                 Command = GetCommand("select id,nombre from grafica", CommandType.Text);
                 return GetTableCommand(Command);
             }

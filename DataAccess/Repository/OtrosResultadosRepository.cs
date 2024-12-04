@@ -26,7 +26,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();
                 Command = GetCommand("select id, PrimerTermino,ReynoldEnjambre,SegundoTermino,TercerTermino,FuncionObjetivo,DiametroBurbuja,resultado_id  from otros_resultados where resultado_id=" + id, CommandType.Text);
                 DataTable dataTable = GetTableCommand(Command);
                 return dataTable;
@@ -44,7 +43,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();               
                 double PrimerTermino = Math.Round(double.Parse( colection["PrimerTermino"].ToString()), 15);
                 double ReynoldEnjambre = Math.Round(double.Parse( colection["ReynoldEnjambre"].ToString()), 15);
                 double SegundoTermino = Math.Round(double.Parse( colection["SegundoTermino"].ToString()), 15);

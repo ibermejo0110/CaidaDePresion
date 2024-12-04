@@ -8,7 +8,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();
                 Command = GetCommand("delete from resultados", CommandType.Text);
                 Command.ExecuteNonQuery();                
             }
@@ -25,7 +24,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();
                 Command = GetCommand("SELECT id, `Jg(cm/s)`, `DeltaP(Psi)`, `Jsl(cm/s)`, `%Holdup`,`Db(mm)`,`Ub(cm/s)`,`Usg(m/s)`," +
                                      "`Reynold de burbuja`, concentracion_id,`Concentración(ppm)`,  espumante_id,  espumante FROM view_resultados", CommandType.Text);
                 DataTable dt = GetTableCommand(Command);
@@ -46,7 +44,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();
                 Command = GetCommand("select id, `Jg(cm/s)`, `DeltaP(Psi)`, `Jsl(cm/s)`, `%Holdup`,`Db(mm)`," +
                                      "`Ub(cm/s)`,`Usg(m/s)`,`Reynold de burbuja`, concentracion_id,`Concentración(ppm)`," +
                                      "espumante_id,  espumante from view_resultados where espumante_id="
@@ -67,7 +64,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();
                 double deltap = Math.Round(double.Parse( colection["deltap"].ToString()),5);
                 double jsl =Math.Round(double.Parse( colection["jsl"].ToString()),5);
                 double holdup =Math.Round(double.Parse( colection["holdup"].ToString()),5);
@@ -106,7 +102,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();
                 Command = GetCommand("SELECT `%Holdup`, `Jg(cm/s)` FROM view_resultados where concentracion_id=" + concentracion + " and espumante_id=" + espumante , CommandType.Text);
                 DataTable dt = GetTableCommand(Command);
                 return dt;
@@ -124,7 +119,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();                
                 Command = GetCommand("select `%Holdup`,`Usg(m/s)` from view_resultados where concentracion_id=" + concentracion+" and espumante_id="+espumante, CommandType.Text);
                 DataTable dt = GetTableCommand(Command);
                 return dt;
@@ -142,7 +136,7 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();                
+
                 Command = GetCommand("select `Db(mm)`,`Jg(cm/s)` from view_resultados where concentracion_id=" + concentracion + " and espumante_id=" + espumante, CommandType.Text);
                 DataTable dt = GetTableCommand(Command);
                 return dt;
@@ -160,7 +154,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();
                 Command = GetCommand("SELECT `Jg(cm/s)`,`Db(mm)`,`Concentración(ppm)` FROM view_resultados where espumante_id  =" + espumante, CommandType.Text);
                 DataTable dt = GetTableCommand(Command);
                 return dt;

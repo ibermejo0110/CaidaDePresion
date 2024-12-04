@@ -15,7 +15,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();
                 Command = GetCommand("select id,nombre from concentracion" , CommandType.Text);
                 DataTable table = GetTableCommand(Command);
                 return table;
@@ -33,7 +32,6 @@ namespace DataAccess.Repository
         {
             try
             {
-                Abrir();
                 Command = GetCommand("select concentracion_id,concentracion from view_espumante_concentracion where espumante_id=" + id, CommandType.Text);
                 DataTable table = GetTableCommand(Command);
                 return table;

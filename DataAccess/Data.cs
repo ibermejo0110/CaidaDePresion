@@ -20,6 +20,7 @@ namespace DataAccess
             get
             {
                 _conection = new() { ConnectionString = ConnectionString };
+                _conection.Open();
                 return _conection;
             }
         }
@@ -29,10 +30,7 @@ namespace DataAccess
         public abstract void Update(Dictionary<string, object> colection, int id);
         public abstract void Delete(int id);
         public abstract void Delete();
-        protected void Abrir()
-        {
-            Connection.Open();
-        }
+  
         protected DataTable GetTableCommand(MySqlCommand command)
         {
             DataTable dt = new();
@@ -40,14 +38,17 @@ namespace DataAccess
             DataAdapter.Fill(dt);
             return dt;
         }
+
         protected MySqlCommand GetCommand(string sql, CommandType type)
         {
+         
             MySqlCommand command = new ()
             {
-                Connection = Connection,
+                Connection =this. Connection,
                 CommandType = type,
                 CommandText = sql
             };
+//           command.Connection.Open();
             return command;
         }  
         protected void Cerrar()
