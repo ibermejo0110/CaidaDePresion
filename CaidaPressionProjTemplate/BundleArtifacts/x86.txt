@@ -1,0 +1,6 @@
+MainPackage=C:\Users\jesus\OneDrive\Documentos\GitHub\CaidaPresion\CaidaPressionProjTemplate\bin\x86\Debug\CaidaPressionProjTemplate_1.0.4.0_x86_Debug.appx
+SymbolPackage=C:\Users\jesus\OneDrive\Documentos\GitHub\CaidaPresion\CaidaPressionProjTemplate\obj\x86\Debug\Symbols\CaidaPressionProjTemplate_1.0.4.0_x86_Debug.appxsym
+ResourcePack=C:\Users\jesus\OneDrive\Documentos\GitHub\CaidaPresion\CaidaPressionProjTemplate\bin\x86\Debug\CaidaPressionProjTemplate_1.0.4.0_scale-100.appx
+ResourcePack=C:\Users\jesus\OneDrive\Documentos\GitHub\CaidaPresion\CaidaPressionProjTemplate\bin\x86\Debug\CaidaPressionProjTemplate_1.0.4.0_scale-125.appx
+ResourcePack=C:\Users\jesus\OneDrive\Documentos\GitHub\CaidaPresion\CaidaPressionProjTemplate\bin\x86\Debug\CaidaPressionProjTemplate_1.0.4.0_scale-150.appx
+ResourcePack=C:\Users\jesus\OneDrive\Documentos\GitHub\CaidaPresion\CaidaPressionProjTemplate\bin\x86\Debug\CaidaPressionProjTemplate_1.0.4.0_scale-400.appx

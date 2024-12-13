@@ -9,7 +9,7 @@
   <Identity
     Name="657c5f04-8e6d-44bc-8eaa-a210284d1677"
     Publisher="CN=jesus"
-    Version="1.0.0.0" />
+    Version="1.0.4.0" />
 
   <Properties>
     <DisplayName>CaidaPressionProjTemplate</DisplayName>
@@ -31,12 +31,12 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="CaidaPressionProjTemplate"
-        Description="CaidaPressionProjTemplate"
+        DisplayName="Caida de presión"
+        Description="Diseño de una interfaz gráfica para la columna de flotación a escala test rig del laboratorio de carboquímica de la Universidad del Atlántico. Proyecto de grado presentado por: Indira Bermejo y David Padilla Programa de ingeniería química Universidad del Atlántico"
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"
         Square44x44Logo="Images\Square44x44Logo.png">
-        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"  Square71x71Logo="Images\SmallTile.png" Square310x310Logo="Images\LargeTile.png"/>
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
     </Application>

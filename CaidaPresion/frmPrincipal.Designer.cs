@@ -31,6 +31,8 @@ namespace CaidaPresion
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
@@ -138,6 +140,14 @@ namespace CaidaPresion
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = Color.FromArgb(42, 46, 50);
             dataGridView1.BorderStyle = BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Variable, Resultado });
             dataGridView1.Dock = DockStyle.Fill;
@@ -147,6 +157,9 @@ namespace CaidaPresion
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 62;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(305, 143);
             dataGridView1.TabIndex = 44;
@@ -413,10 +426,10 @@ namespace CaidaPresion
             btnNuevoEspumante.BackgroundImage = (Image)resources.GetObject("btnNuevoEspumante.BackgroundImage");
             btnNuevoEspumante.BackgroundImageLayout = ImageLayout.Stretch;
             btnNuevoEspumante.FlatStyle = FlatStyle.Flat;
-            btnNuevoEspumante.Location = new Point(324, 29);
+            btnNuevoEspumante.Location = new Point(324, 28);
             btnNuevoEspumante.Margin = new Padding(2);
             btnNuevoEspumante.Name = "btnNuevoEspumante";
-            btnNuevoEspumante.Size = new Size(28, 20);
+            btnNuevoEspumante.Size = new Size(28, 24);
             btnNuevoEspumante.TabIndex = 41;
             btnNuevoEspumante.UseVisualStyleBackColor = true;
             btnNuevoEspumante.Click += btnNuevoEspumante_Click;
@@ -699,7 +712,7 @@ namespace CaidaPresion
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 77);
             panel1.Name = "panel1";
-            panel1.Size = new Size(242, 396);
+            panel1.Size = new Size(242, 581);
             panel1.TabIndex = 55;
             // 
             // panel7
@@ -708,7 +721,7 @@ namespace CaidaPresion
             panel7.Dock = DockStyle.Fill;
             panel7.Location = new Point(0, 422);
             panel7.Name = "panel7";
-            panel7.Size = new Size(242, 0);
+            panel7.Size = new Size(242, 159);
             panel7.TabIndex = 48;
             // 
             // panel13
@@ -764,7 +777,7 @@ namespace CaidaPresion
             panel15.Dock = DockStyle.Fill;
             panel15.Location = new Point(242, 77);
             panel15.Name = "panel15";
-            panel15.Size = new Size(1118, 396);
+            panel15.Size = new Size(1118, 581);
             panel15.TabIndex = 56;
             // 
             // panel17
@@ -775,7 +788,7 @@ namespace CaidaPresion
             panel17.Dock = DockStyle.Fill;
             panel17.Location = new Point(854, 0);
             panel17.Name = "panel17";
-            panel17.Size = new Size(264, 396);
+            panel17.Size = new Size(264, 581);
             panel17.TabIndex = 53;
             // 
             // customPanel3
@@ -935,7 +948,7 @@ namespace CaidaPresion
             panel16.Dock = DockStyle.Left;
             panel16.Location = new Point(0, 0);
             panel16.Name = "panel16";
-            panel16.Size = new Size(854, 396);
+            panel16.Size = new Size(854, 581);
             panel16.TabIndex = 52;
             // 
             // customPanel5
@@ -980,11 +993,12 @@ namespace CaidaPresion
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.Black;
-            ClientSize = new Size(1360, 473);
+            ClientSize = new Size(1360, 658);
             Controls.Add(panel15);
             Controls.Add(panel1);
             Controls.Add(panel11);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmPrincipal";

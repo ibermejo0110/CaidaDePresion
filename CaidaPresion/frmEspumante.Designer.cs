@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEspumante));
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             label1 = new Label();
             txtDescripcion = new TextBox();
             txtNombre = new TextBox();
@@ -61,30 +65,31 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(85, 30);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(60, 18);
             label1.Name = "label1";
-            label1.Size = new Size(84, 24);
+            label1.Size = new Size(62, 16);
             label1.TabIndex = 1;
             label1.Text = "Nombre";
             // 
             // txtDescripcion
             // 
             txtDescripcion.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDescripcion.Location = new Point(176, 72);
+            txtDescripcion.Location = new Point(123, 43);
+            txtDescripcion.Margin = new Padding(2, 2, 2, 2);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.ScrollBars = ScrollBars.Vertical;
-            txtDescripcion.Size = new Size(251, 200);
+            txtDescripcion.Size = new Size(177, 122);
             txtDescripcion.TabIndex = 46;
             // 
             // txtNombre
             // 
             txtNombre.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombre.Location = new Point(176, 27);
+            txtNombre.Location = new Point(123, 16);
+            txtNombre.Margin = new Padding(2, 2, 2, 2);
             txtNombre.Name = "txtNombre";
             txtNombre.ScrollBars = ScrollBars.Vertical;
-            txtNombre.Size = new Size(251, 30);
+            txtNombre.Size = new Size(177, 23);
             txtNombre.TabIndex = 48;
             // 
             // label2
@@ -92,10 +97,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(47, 116);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(33, 70);
             label2.Name = "label2";
-            label2.Size = new Size(122, 24);
+            label2.Size = new Size(91, 16);
             label2.TabIndex = 49;
             label2.Text = "Descripción";
             // 
@@ -104,16 +108,28 @@
             dgEspumante.AllowUserToAddRows = false;
             dgEspumante.AllowUserToDeleteRows = false;
             dgEspumante.BackgroundColor = Color.FromArgb(42, 46, 50);
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgEspumante.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgEspumante.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgEspumante.Columns.AddRange(new DataGridViewColumn[] { id, nombre, descripcion });
             dgEspumante.Dock = DockStyle.Fill;
             dgEspumante.Location = new Point(0, 0);
+            dgEspumante.Margin = new Padding(2, 2, 2, 2);
             dgEspumante.Name = "dgEspumante";
             dgEspumante.ReadOnly = true;
             dgEspumante.RowHeadersVisible = false;
             dgEspumante.RowHeadersWidth = 62;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgEspumante.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgEspumante.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgEspumante.Size = new Size(297, 145);
+            dgEspumante.Size = new Size(208, 87);
             dgEspumante.TabIndex = 58;
             dgEspumante.CellContentClick += dgEspumante_CellContentClick;
             // 
@@ -135,7 +151,7 @@
             nombre.MinimumWidth = 8;
             nombre.Name = "nombre";
             nombre.ReadOnly = true;
-            nombre.Width = 114;
+            nombre.Width = 78;
             // 
             // descripcion
             // 
@@ -145,7 +161,7 @@
             descripcion.MinimumWidth = 8;
             descripcion.Name = "descripcion";
             descripcion.ReadOnly = true;
-            descripcion.Width = 140;
+            descripcion.Width = 97;
             // 
             // customPanel2
             // 
@@ -159,9 +175,10 @@
             customPanel2.GradientAngle = 90F;
             customPanel2.GradientBottomColor = Color.FromArgb(42, 46, 50);
             customPanel2.GradientTopColor = Color.FromArgb(42, 46, 50);
-            customPanel2.Location = new Point(558, 353);
+            customPanel2.Location = new Point(391, 212);
+            customPanel2.Margin = new Padding(2, 2, 2, 2);
             customPanel2.Name = "customPanel2";
-            customPanel2.Size = new Size(222, 74);
+            customPanel2.Size = new Size(155, 44);
             customPanel2.TabIndex = 60;
             // 
             // BtnGuardar
@@ -170,9 +187,10 @@
             BtnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
             BtnGuardar.FlatStyle = FlatStyle.Flat;
             BtnGuardar.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BtnGuardar.Location = new Point(62, 12);
+            BtnGuardar.Location = new Point(43, 7);
+            BtnGuardar.Margin = new Padding(2, 2, 2, 2);
             BtnGuardar.Name = "BtnGuardar";
-            BtnGuardar.Size = new Size(44, 50);
+            BtnGuardar.Size = new Size(31, 30);
             BtnGuardar.TabIndex = 44;
             BtnGuardar.UseVisualStyleBackColor = true;
             BtnGuardar.Click += BtnGuardar_Click;
@@ -183,9 +201,10 @@
             btnCalibrar.BackgroundImageLayout = ImageLayout.Stretch;
             btnCalibrar.FlatStyle = FlatStyle.Flat;
             btnCalibrar.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCalibrar.Location = new Point(162, 12);
+            btnCalibrar.Location = new Point(113, 7);
+            btnCalibrar.Margin = new Padding(2, 2, 2, 2);
             btnCalibrar.Name = "btnCalibrar";
-            btnCalibrar.Size = new Size(44, 50);
+            btnCalibrar.Size = new Size(31, 30);
             btnCalibrar.TabIndex = 31;
             btnCalibrar.UseVisualStyleBackColor = true;
             btnCalibrar.Click += btnCalibrar_Click;
@@ -196,9 +215,10 @@
             btnValoresIniciales.BackgroundImageLayout = ImageLayout.Stretch;
             btnValoresIniciales.FlatStyle = FlatStyle.Flat;
             btnValoresIniciales.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnValoresIniciales.Location = new Point(112, 12);
+            btnValoresIniciales.Location = new Point(78, 7);
+            btnValoresIniciales.Margin = new Padding(2, 2, 2, 2);
             btnValoresIniciales.Name = "btnValoresIniciales";
-            btnValoresIniciales.Size = new Size(44, 50);
+            btnValoresIniciales.Size = new Size(31, 30);
             btnValoresIniciales.TabIndex = 43;
             btnValoresIniciales.UseVisualStyleBackColor = true;
             btnValoresIniciales.Click += btnValoresIniciales_Click;
@@ -209,9 +229,10 @@
             btnNuevo.BackgroundImageLayout = ImageLayout.Stretch;
             btnNuevo.FlatStyle = FlatStyle.Flat;
             btnNuevo.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNuevo.Location = new Point(12, 12);
+            btnNuevo.Location = new Point(8, 7);
+            btnNuevo.Margin = new Padding(2, 2, 2, 2);
             btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(44, 50);
+            btnNuevo.Size = new Size(31, 30);
             btnNuevo.TabIndex = 35;
             btnNuevo.UseVisualStyleBackColor = true;
             btnNuevo.Click += btnNuevo_Click;
@@ -228,9 +249,10 @@
             customPanel1.GradientAngle = 90F;
             customPanel1.GradientBottomColor = Color.FromArgb(42, 46, 50);
             customPanel1.GradientTopColor = Color.FromArgb(42, 46, 50);
-            customPanel1.Location = new Point(12, 37);
+            customPanel1.Location = new Point(8, 22);
+            customPanel1.Margin = new Padding(2, 2, 2, 2);
             customPanel1.Name = "customPanel1";
-            customPanel1.Size = new Size(455, 300);
+            customPanel1.Size = new Size(318, 180);
             customPanel1.TabIndex = 61;
             // 
             // customPanel3
@@ -242,9 +264,10 @@
             customPanel3.GradientAngle = 90F;
             customPanel3.GradientBottomColor = Color.FromArgb(42, 46, 50);
             customPanel3.GradientTopColor = Color.FromArgb(42, 46, 50);
-            customPanel3.Location = new Point(483, 37);
+            customPanel3.Location = new Point(338, 22);
+            customPanel3.Margin = new Padding(2, 2, 2, 2);
             customPanel3.Name = "customPanel3";
-            customPanel3.Size = new Size(297, 145);
+            customPanel3.Size = new Size(208, 87);
             customPanel3.TabIndex = 62;
             // 
             // customPanel4
@@ -256,9 +279,10 @@
             customPanel4.GradientAngle = 90F;
             customPanel4.GradientBottomColor = Color.FromArgb(42, 46, 50);
             customPanel4.GradientTopColor = Color.FromArgb(42, 46, 50);
-            customPanel4.Location = new Point(483, 192);
+            customPanel4.Location = new Point(338, 115);
+            customPanel4.Margin = new Padding(2, 2, 2, 2);
             customPanel4.Name = "customPanel4";
-            customPanel4.Size = new Size(297, 145);
+            customPanel4.Size = new Size(208, 87);
             customPanel4.TabIndex = 63;
             // 
             // dgConcentracion
@@ -266,16 +290,28 @@
             dgConcentracion.AllowUserToAddRows = false;
             dgConcentracion.AllowUserToDeleteRows = false;
             dgConcentracion.BackgroundColor = Color.FromArgb(42, 46, 50);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgConcentracion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgConcentracion.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgConcentracion.Columns.AddRange(new DataGridViewColumn[] { concentracion_id, concentracion });
             dgConcentracion.Dock = DockStyle.Fill;
             dgConcentracion.Location = new Point(0, 0);
+            dgConcentracion.Margin = new Padding(2, 2, 2, 2);
             dgConcentracion.Name = "dgConcentracion";
             dgConcentracion.ReadOnly = true;
             dgConcentracion.RowHeadersVisible = false;
             dgConcentracion.RowHeadersWidth = 62;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgConcentracion.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgConcentracion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgConcentracion.Size = new Size(297, 145);
+            dgConcentracion.Size = new Size(208, 87);
             dgConcentracion.TabIndex = 58;
             // 
             // concentracion_id
@@ -299,15 +335,16 @@
             // 
             // frmEspumante
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(560, 270);
             Controls.Add(customPanel4);
             Controls.Add(customPanel3);
             Controls.Add(customPanel1);
             Controls.Add(customPanel2);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "frmEspumante";
             Text = "Espumante";
             Load += frmEspumante_Load;
