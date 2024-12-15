@@ -1,2 +1,2 @@
 # CaidaPresion
- proyecto cientifico
+ Proyecto de grado 
